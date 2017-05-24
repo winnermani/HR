@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="wrap">
+                <p class="form-title">
+                    Login Here !</p>
+                <form class="login" name="lf" novalidate ng-controller ="UserController">
+               <input type="text" ng-model="username" required placeholder="User Name">
+                <input type="password" ng-click ="open($event)"required name="password" ng-model="userpwd" placeholder="Password">
+                    <input type="button" class="btn btn-success btn-sm" ng-click ="submit()" ng-disabled ="lf.$invalid" value="Login">
+                <!--<div class="remember-forgot">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" />
+                                    Remember Me
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 forgot-pass-content">
+                            <a href="javascription:void(0)" class="forgot-pass">Forgot Password</a>
+                        </div>
+                    </div>
+                </div>-->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

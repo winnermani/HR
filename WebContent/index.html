@@ -1,0 +1,64 @@
+<html>
+  <head>  
+    <title>HR Management</title>  
+    <style>
+      .username.ng-valid {
+          background-color: lightgreen;
+      }
+      .username.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .username.ng-dirty.ng-invalid-minlength {
+          background-color: yellow;
+      }
+
+      .email.ng-valid {
+          background-color: lightgreen;
+      }
+      .email.ng-dirty.ng-invalid-required {
+          background-color: red;
+      }
+      .email.ng-dirty.ng-invalid-email {
+          background-color: yellow;
+      }
+    </style>
+     <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body ng-app="myApp">  
+            <div id="header" class="navbar navbar-default navbar-fixed-top" ui-view name="header" ng-show="displayHeader">
+                
+            </div>
+            <div id="wrapper">
+                  <div id="sidebar-wrapper" class="col-md-3" ui-view name="nav" ng-show="displayNav">
+                            
+                </div>
+                <div id="main-wrapper" class="col-md-9 pull-right">
+                    <div id="main" ui-view name="content">
+
+                    </div>
+
+                    <div class="col-md-12 footer" ui-view name="footer" ng-show="displayFooter">
+                      
+                    </div>
+
+                </div>
+            </div>
+                <!--<div ng-view></div>-->
+                <!--<div ui-view name="header"></div>
+                <div ui-view name="nav"></div>
+                <div ui-view name="content" ></div>
+                <div ui-view name="footer"></div>-->
+      
+      <script src="angularjslib/angular.js"></script>  
+      <script src="angularjslib/angular-ui-router.min.js"></script>
+      <script src="angularjslib/angular-route.js"></script>
+      <script src="customjs/app.js"></script>
+      <script src="factory/authInterceptor.js"></script>
+      <script src="services/user_service.js"></script>
+      <script src="controllers/user_controller.js"></script>
+     <script src="controllers/dashboard.js"></script>
+      <!--<script src="controllers/dashboard_controller.js"></script>-->
+  </body>
+</html>

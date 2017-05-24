@@ -1,0 +1,38 @@
+'use strict';
+
+var App = angular.module('myApp',['ui.router','ngRoute']);
+
+App.config(function($httpProvider,$stateProvider,$urlRouterProvider,$routeProvider) {
+  $httpProvider.interceptors.push('AuthInterceptor');
+    // $urlRouterProvider.otherwise('/login');
+     $routeProvider.when('/',{
+        templateUrl:'views/login.html'
+    })
+    .when('/login',{
+        resolve:{
+          "check":function($location,$rootScope){
+              if(!$rootScope.isLoggedIn){
+                 $location.path('/'); 
+              }                              
+          }  
+        },
+        templateUrl:"views/login.html"        
+    }).when('/dashboard',{
+        resolve:{
+          "check":function($location,$rootScope){
+              if(!$rootScope.isLoggedIn){
+                 $location.path('/'); 
+              }                              
+          }  
+        },
+        templateUrl:"views/dashboard.html"        
+    })
+    .otherwise({
+        redirectTo:"/"
+    });
+    
+});
+
+
+
+
